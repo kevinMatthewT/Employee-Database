@@ -84,10 +84,14 @@ int main()
                 i = -1;
                 userInput2 = 0;
                 cout << "Enter the employee index of the employee you want to edit: ";
-                while(i<0 || i>EMPLOYEE.EmpID.size()){
-                    cout << "Index must be between 0 and the number of employees: ";
-                    cin >> i;
+                cin >> i;
+                if (i<0 || i>EMPLOYEE.EmpID.size()){
+                    while(i<0 || i>EMPLOYEE.EmpID.size()){
+                        cout << "Index must be between 0 and the number of employees: ";
+                        cin >> i;
+                    }
                 }
+                
                 break;
                 
             case 4:
@@ -99,12 +103,15 @@ int main()
                 i = -1;
                 userInput2 = 0;
                 cout << "Enter the employee index of the employee you want deleted: ";
+                cin >> i;
                 if (i<0 || i>EMPLOYEE.EmpID.size()){
                     while(i<0 || i>EMPLOYEE.EmpID.size()){
-                        cout << "Enter the employee index of the employee you want deleted: ";
+                        cout << "Index must be between 0 and the number of employees: ";
                         cin >> i;
                     }    
                 }
+                
+                
                 
                 
                 break;
@@ -120,7 +127,5 @@ int main()
     return 0;
 
 }
-
-
 
 
