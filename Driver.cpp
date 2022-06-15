@@ -82,7 +82,7 @@ int main()
                 }
                 
                 i = -1;
-                userInput2 = 0;
+                userInput2 = 1;
                 cout << "Enter the employee index of the employee you want to edit: ";
                 cin >> i;
                 if (i<0 || i>EMPLOYEE.EmpID.size()){
@@ -92,6 +92,59 @@ int main()
                     }
                 }
                 
+                while  (userInput2 != 0){
+                    cout << "\n Which element would you like to change?";
+                    cout << "\n0. Back\n1. ID\n2.Name\n3. Address\n4. DOB\n5. Phone Number\n6. Position\n7.Hours Worked\n8. Overtime Hours\n9. Normal Rate\n10. Overtime Rate";
+                    cout << "\nEnter number: ";
+                    cin >> userInput2;
+                    switch (userInput2){
+                        case 0:
+                            //cancel edit
+                            cout << "---Cancelling edit---";
+                            break;
+                            
+                        case 1:
+                        
+                            break;
+                            
+                        case 2:
+                        
+                            break;
+                            
+                        case 3:
+                        
+                            break;
+                            
+                        case 4:
+                        
+                            break;
+                            
+                        case 5:
+                        
+                            break;
+                            
+                        case 6:
+                        
+                            break;
+                        
+                        case 7:
+                        
+                            break;
+                            
+                        case 8:
+                        
+                            break;
+                            
+                        case 9:
+                        
+                            break;
+                            
+                        case 10:
+                        
+                            break;
+                            
+                    }
+                };
                 break;
                 
             case 4:
@@ -104,15 +157,21 @@ int main()
                 userInput2 = 0;
                 cout << "Enter the employee index of the employee you want deleted: ";
                 cin >> i;
-                if (i<0 || i>EMPLOYEE.EmpID.size()){
-                    while(i<0 || i>EMPLOYEE.EmpID.size()){
-                        cout << "Index must be between 0 and the number of employees: ";
-                        cin >> i;
-                    }    
-                }
+                while(i<0 || i>EMPLOYEE.EmpID.size()){
+                    cout << "Index must be between 0 and the number of employees: ";
+                    cin >> i;
+                };
                 
-                
-                
+                cout << "Are you sure you want to delete Index " << i;
+                cout << "\n1. Yes\n2. No" << endl;
+                cin >> userInput2;
+                while (userInput2 != (1 || 2)){
+                    cout << "Are you sure you want to delete Index " << i;
+                    cout << "\n1. Yes\n2. No" << endl;
+                    cin >> userInput2;
+                };
+                    
+                    
                 
                 break;
                 
@@ -127,5 +186,3 @@ int main()
     return 0;
 
 }
-
-
