@@ -1,3 +1,8 @@
+/*
+Driver for the Command Line Interface
+*/
+
+
 int main()
 {
     int id;
@@ -76,7 +81,7 @@ int main()
                 cin >> RateOvertime;
                 EMPLOYEE.EmpRateOvertime.push_back(RateOvertime);
                 
-                cout << "==========================Database successfully updated!==========================";
+                EMPLOYEE.updatedMessage();
                 break;
                 
             case 3:
