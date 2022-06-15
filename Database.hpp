@@ -4,7 +4,7 @@
 using namespace std;
 
 
-class actions{
+class Database{
     //all variables
     int id;
     string name;
@@ -21,6 +21,7 @@ class actions{
     int salary;
 
     //making vectors
+    public:
     vector<int> EmpID;
 
     vector<string> EmpName;
@@ -84,7 +85,7 @@ class actions{
 
     //all the getters made will be used to input the info there (exclude hours and salary)
     //note: we can force them to make an if statement calling all setters
-    void employee_info_store(){
+    void employee_info_store(int id, string name, string address, string BirthDate, string PhoneNumber, string position){
         EmpID.push_back(id);
         EmpName.push_back(name);
         EmpAddress.push_back(address);
@@ -112,7 +113,7 @@ class actions{
 
 
     void toString(int x){
-        
+        cout<<EmpID[x] << " " <<EmpName[x] <<" "<<EmpAddress[x]<< " " <<EmpBirthDate[x]<<" "<< EmpPhoneNumber[x]<< " "<< EmpPosition[x]<<" "<< EmpHoursWorked[x]<<"Hours  $"<<EmpSalary[x]  <<endl;
     }
 
     //a way to remove employees by their index (not sorting proof)
@@ -134,7 +135,3 @@ class actions{
 
 };
 
-
-int main(){
-    
-}
