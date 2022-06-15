@@ -40,11 +40,11 @@ int main()
                 cin >> id;                    
                 EMPLOYEE.EmpID.push_back(id);
                 
-                cout << "Input name: ";
+                cout << "Input Name: ";
                 cin >> name;
                 EMPLOYEE.EmpName.push_back(name);
                 
-                cout << "Input address: ";
+                cout << "Input Address: ";
                 cin >> address;
                 EMPLOYEE.EmpAddress.push_back(address);
                 
@@ -55,6 +55,10 @@ int main()
                 cout << "Input Phone Number: ";
                 cin >> PhoneNumber;
                 EMPLOYEE.EmpPhoneNumber.push_back(PhoneNumber);
+                
+                cout << "Input Position: ";
+                cin >> position;
+                EMPLOYEE.EmpPosition.push_back(position);
                 
                 cout << "Input Hours Worked: ";
                 cin >> HoursWorked;
@@ -97,54 +101,114 @@ int main()
                     cout << "\n0. Back\n1. ID\n2.Name\n3. Address\n4. DOB\n5. Phone Number\n6. Position\n7.Hours Worked\n8. Overtime Hours\n9. Normal Rate\n10. Overtime Rate";
                     cout << "\nEnter number: ";
                     cin >> userInput2;
-                    switch (userInput2){
-                        case 0:
-                            //cancel edit
-                            cout << "---Cancelling edit---";
-                            break;
-                            
-                        case 1:
-                        
-                            break;
-                            
-                        case 2:
-                        
-                            break;
-                            
-                        case 3:
-                        
-                            break;
-                            
-                        case 4:
-                        
-                            break;
-                            
-                        case 5:
-                        
-                            break;
-                            
-                        case 6:
-                        
-                            break;
-                        
-                        case 7:
-                        
-                            break;
-                            
-                        case 8:
-                        
-                            break;
-                            
-                        case 9:
-                        
-                            break;
-                            
-                        case 10:
-                        
-                            break;
-                            
-                    }
                 };
+                switch (userInput2){
+                    case 0:
+                        //cancel edit
+                        cout << "---Cancelling edit---";
+                        break;
+                            
+                    case 1:
+                        cout << "Enter new ID: ";
+                        cin >> id;
+                        while (id<0){
+                            cout << "Value must be a positive integer: ";
+                            cin >> id;
+                        }
+                        EMPLOYEE.EmpID[i] = id;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                            
+                    case 2:
+                        cout << "Enter new name: ";
+                        cin >> name;
+                        EMPLOYEE.EmpName[i] = name;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 3:
+                        cout << "Enter new address: ";
+                        cin >> address;
+                        EMPLOYEE.EmpAddress[i] = address;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 4:
+                        cout << "Enter new DOB: ";
+                        cin >> BirthDate;
+                        EMPLOYEE.EmpBirthDate[i] = BirthDate;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 5:
+                        cout << "Enter new phone number: ";
+                        cin >> PhoneNumber;
+                        EMPLOYEE.EmpPhoneNumber[i] = PhoneNumber;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 6:
+                        cout << "Enter new position: ";
+                        cin >> position;
+                        EMPLOYEE.EmpPosition[i] = position;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                    
+                    case 7:
+                        cout << "Enter new hours worked: ";
+                        cin >> HoursWorked;
+                        while (HoursWorked<0){
+                            cout << "Value must be a positive integer: ";
+                            cin >> HoursWorked;
+                        }
+                        EMPLOYEE.EmpHoursWorked[i]=HoursWorked;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 8:
+                        cout << "Enter new hours worked overtime: ";
+                        cin >> HoursOvertime;
+                        while (HoursOvertime<0){
+                            cout << "Value must be a positive integer: ";
+                            cin >> HoursOvertime;
+                        }
+                        EMPLOYEE.EmpHoursOvertime[i]=HoursOvertime;
+                        EMPLOYEE.updatedMessage();
+                            
+                        break;
+                        
+                    case 9:
+                        cout << "Enter new normal rate: ";
+                        cin >> RateNormal;
+                        while (RateNormal<0){
+                            cout << "Value must be a positive integer: ";
+                            cin >> RateNormal;
+                        }
+                        EMPLOYEE.EmpRateNormal[i]=RateNormal;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    case 10:
+                        cout << "Enter new overtime rate: ";
+                        cin >> RateOvertime;
+                        while (RateOvertime<0){
+                            cout << "Value must be a positive integer: ";
+                            cin >> RateOvertime;
+                        }
+                        EMPLOYEE.EmpRateOvertime[i]=RateOvertime;
+                        EMPLOYEE.updatedMessage();
+                        
+                        break;
+                        
+                    }
                 break;
                 
             case 4:
@@ -161,16 +225,16 @@ int main()
                     cout << "Index must be between 0 and the number of employees: ";
                     cin >> i;
                 };
-                
-                cout << "Are you sure you want to delete Index " << i;
-                cout << "\n1. Yes\n2. No" << endl;
-                cin >> userInput2;
                 while (userInput2 != (1 || 2)){
                     cout << "Are you sure you want to delete Index " << i;
                     cout << "\n1. Yes\n2. No" << endl;
                     cin >> userInput2;
                 };
+                if (userInput2 == 2){
+                    break;
+                } else{
                     
+                }
                     
                 
                 break;
