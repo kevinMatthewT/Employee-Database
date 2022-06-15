@@ -1,8 +1,3 @@
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
 int main()
 {
     int id;
@@ -21,9 +16,11 @@ int main()
     
     Database EMPLOYEE;
     int userInput = 0;
+    int userInput2 = 0;
+    int i = -1;
     
     while (userInput != 5){
-        cout<<"==========================EMPLOYEE DATABASE==========================";
+        cout<<"\n==========================EMPLOYEE DATABASE==========================";
         cout<<"\n1. View Database\n2. Insert new employee\n3. Edit employee data\n4. Delete employee data\n5. Close";
         cout<<"\n\nInput an action: ";
         cin >> userInput;
@@ -31,51 +28,84 @@ int main()
         switch (userInput){
             case 1:
                 cout << "\n ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION\n";
-                for(int i = 0; i<EMPLOYEE.EmpID.size(); ++i){
-                    EMPLOYEE.toString(i);
-                }
+                cout << EMPLOYEE.EmpID[0];
+                    
                 
                 break;
                 
             case 2:
             
+                
                 cout << "\nInput ID: ";
-                cin >> id;
+                cin >> id;                    
                 EMPLOYEE.EmpID.push_back(id);
+                
                 cout << "Input name: ";
                 cin >> name;
                 EMPLOYEE.EmpName.push_back(name);
+                
                 cout << "Input address: ";
                 cin >> address;
-                EMPLOYEE.EmpName.push_back(address);
+                EMPLOYEE.EmpAddress.push_back(address);
+                
                 cout << "Input Birth Date: ";
                 cin >> BirthDate;
                 EMPLOYEE.EmpBirthDate.push_back(BirthDate);
+                
                 cout << "Input Phone Number: ";
                 cin >> PhoneNumber;
                 EMPLOYEE.EmpPhoneNumber.push_back(PhoneNumber);
+                
                 cout << "Input Hours Worked: ";
                 cin >> HoursWorked;
                 EMPLOYEE.EmpHoursWorked.push_back(HoursWorked);
+                
                 cout << "Input Hours Worked Overtime: ";
                 cin >> HoursOvertime;
                 EMPLOYEE.EmpHoursOvertime.push_back(HoursOvertime);
+                
                 cout << "Input Normal Rate: ";
                 cin >> RateNormal;
                 EMPLOYEE.EmpRateNormal.push_back(RateNormal);
+                
                 cout << "Input Overtime Rate: ";
                 cin >> RateOvertime;
                 EMPLOYEE.EmpRateOvertime.push_back(RateOvertime);
-                break;
-                cout << "==========================Database successfully updated!==========================";
                 
+                cout << "==========================Database successfully updated!==========================";
                 break;
                 
             case 3:
-                cout << "";
+                if(EMPLOYEE.EmpID.size() == 0){
+                    cout << "The database is still empty!";
+                    break;
+                }
+                
+                i = -1;
+                userInput2 = 0;
+                cout << "Enter the employee index of the employee you want to edit: ";
+                while(i<0 || i>EMPLOYEE.EmpID.size()){
+                    cout << "Index must be between 0 and the number of employees: ";
+                    cin >> i;
+                }
                 break;
                 
             case 4:
+                if(EMPLOYEE.EmpID.size() == 0){
+                    cout << "The database is still empty!";
+                    break;
+                }
+                
+                i = -1;
+                userInput2 = 0;
+                cout << "Enter the employee index of the employee you want deleted: ";
+                if (i<0 || i>EMPLOYEE.EmpID.size()){
+                    while(i<0 || i>EMPLOYEE.EmpID.size()){
+                        cout << "Enter the employee index of the employee you want deleted: ";
+                        cin >> i;
+                    }    
+                }
+                
                 
                 break;
                 
@@ -87,12 +117,10 @@ int main()
         }
 
 
-
-
-
-
-
-
-
     return 0;
+
 }
+
+
+
+
