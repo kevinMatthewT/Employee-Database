@@ -114,11 +114,6 @@ class Database{
     void updatedMessage(){
         cout << "==========================Database successfully updated!==========================";
     }
-    
-    
-    void toString(int x){
-        cout<<EmpID[x] << " " <<EmpName[x] <<" "<<EmpAddress[x]<< " " <<EmpBirthDate[x]<<" "<< EmpPhoneNumber[x]<< " "<< EmpPosition[x]<<" "<< EmpHoursWorked[x]<<"Hours  $"<<EmpSalary[x]  <<endl;
-    }
 
     //a way to remove employees by their index (not sorting proof)
     void remove_employee(int x){
