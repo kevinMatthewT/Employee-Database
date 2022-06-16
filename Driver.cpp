@@ -261,18 +261,18 @@ int main()
                 }
                 switch (userInput2){
                     case 1:
-                        EMPLOYEE.EmpID.erase(EMPLOYEE.EmpID.begin()+i- 1);
-                        EMPLOYEE.EmpName.erase(EMPLOYEE.EmpName.begin()+i- 1);
-                        EMPLOYEE.EmpAddress.erase(EMPLOYEE.EmpAddress.begin()+i- 1);
-                        EMPLOYEE.EmpBirthDate.erase(EMPLOYEE.EmpBirthDate.begin()+i- 1);
-                        EMPLOYEE.EmpPhoneNumber.erase(EMPLOYEE.EmpPhoneNumber.begin()+i- 1);
-                        EMPLOYEE.EmpPosition.erase(EMPLOYEE.EmpPosition.begin()+i- 1);
+                        EMPLOYEE.EmpID.erase(EMPLOYEE.EmpID.begin()+i);
+                        EMPLOYEE.EmpName.erase(EMPLOYEE.EmpName.begin()+i);
+                        EMPLOYEE.EmpAddress.erase(EMPLOYEE.EmpAddress.begin()+i);
+                        EMPLOYEE.EmpBirthDate.erase(EMPLOYEE.EmpBirthDate.begin()+i);
+                        EMPLOYEE.EmpPhoneNumber.erase(EMPLOYEE.EmpPhoneNumber.begin()+i);
+                        EMPLOYEE.EmpPosition.erase(EMPLOYEE.EmpPosition.begin()+i);
                     
-                        EMPLOYEE.EmpHoursWorked.erase(EMPLOYEE.EmpHoursWorked.begin()+i- 1);
-                        EMPLOYEE.EmpHoursOvertime.erase(EMPLOYEE.EmpHoursOvertime.begin()+i- 1);
+                        EMPLOYEE.EmpHoursWorked.erase(EMPLOYEE.EmpHoursWorked.begin()+i);
+                        EMPLOYEE.EmpHoursOvertime.erase(EMPLOYEE.EmpHoursOvertime.begin()+i);
                 
-                        EMPLOYEE.EmpRateNormal.erase(EMPLOYEE.EmpRateNormal.begin()+i- 1);
-                        EMPLOYEE.EmpRateOvertime.erase(EMPLOYEE.EmpRateOvertime.begin()+i- 1);
+                        EMPLOYEE.EmpRateNormal.erase(EMPLOYEE.EmpRateNormal.begin()+i);
+                        EMPLOYEE.EmpRateOvertime.erase(EMPLOYEE.EmpRateOvertime.begin()+i);
                         break;
                     
                     case 2:
