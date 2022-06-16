@@ -7,7 +7,6 @@ Driver for the Command Line Interface
 
 int main()
 {
-    // initializing variables
     int id;
     string name;
     string address;
@@ -27,7 +26,6 @@ int main()
     int userInput2 = 0;
     int i = -1;
     
-    // start of CLI
     while (userInput != 5){
         cout<<"\n==========================EMPLOYEE DATABASE==========================";
         cout<<"\n1. View Database\n2. Insert new employee\n3. Edit employee data\n4. Delete employee data\n5. Close";
@@ -37,9 +35,8 @@ int main()
         switch (userInput){
             case 1:
                 cout << "\n ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION//HOURS WORKED//HOURS WORKED OVERTIME//NORMAL RATE//OVERTIME RATE\n";
-                // function below prints all data in order
                 for(int x = 0; x < EMPLOYEE.EmpID.size(); x++){
-                    cout<<EMPLOYEE.EmpID[x] << " // " <<EMPLOYEE.EmpName[x] <<" // "<<EMPLOYEE.EmpAddress[x]<< " // " <<EMPLOYEE.EmpBirthDate[x]<<" // "<< EMPLOYEE.EmpPhoneNumber[x]<< " // "<< EMPLOYEE.EmpPosition[x]<<" // "<< EMPLOYEE.EmpHoursWorked[x]<<" // "<< EMPLOYEE.EmpHoursOvertime[x]<<" // "<< EMPLOYEE.EmpRateNormal[x]<<" // "<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
+                    cout<<EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
                 }           
                 break;
                 
@@ -131,7 +128,7 @@ int main()
                     cout << "\n0. Back\n1. ID\n2.Name\n3. Address\n4. DOB\n5. Phone Number\n6. Position\n7.Hours Worked\n8. Overtime Hours\n9. Normal Rate\n10. Overtime Rate";
                     cout << "\nEnter number: ";
                     cin >> userInput2;
-                };
+                
                 switch (userInput2){
                     case 0:
                         //cancel edit
@@ -239,6 +236,7 @@ int main()
                         break;
                         
                     }
+                }
                 break;
                 
             case 4:
