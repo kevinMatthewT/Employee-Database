@@ -34,9 +34,9 @@ int main()
         
         switch (userInput){
             case 1:
-                cout << "\n ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION//HOURS WORKED//HOURS WORKED OVERTIME//NORMAL RATE//OVERTIME RATE\n";
+                cout << "\n INDEX//ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION//HOURS WORKED//HOURS WORKED OVERTIME//NORMAL RATE//OVERTIME RATE\n";
                 for(int x = 0; x < EMPLOYEE.EmpID.size(); x++){
-                    cout<<EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
+                    cout<<x << ". // "EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
                 }           
                 break;
                 
