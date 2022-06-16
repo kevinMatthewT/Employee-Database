@@ -1,7 +1,9 @@
 /*
 Driver for the Command Line Interface
 */
-
+#include <iostream>
+#include <vector>
+#include <./Database.hpp>
 
 int main()
 {
@@ -32,17 +34,21 @@ int main()
         
         switch (userInput){
             case 1:
-                cout << "\n ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION\n";
-                cout << EMPLOYEE.EmpID[0];
-                    
-                
+                cout << "\n ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION//HOURS WORKED//HOURS WORKED OVERTIME//NORMAL RATE//OVERTIME RATE\n";
+                for(int x = 0; x < EMPLOYEE.EmpID.size(); x++){
+                    cout<<EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
+                }           
                 break;
                 
             case 2:
             
                 
                 cout << "\nInput ID: ";
-                cin >> id;                    
+                cin >> id;
+                    while (id<0){
+                        cout << "Value must be a positive integer: ";
+                        cin >> id;
+                    }
                 EMPLOYEE.EmpID.push_back(id);
                 
                 cout << "Input Name: ";
@@ -67,18 +73,34 @@ int main()
                 
                 cout << "Input Hours Worked: ";
                 cin >> HoursWorked;
+                while (HoursWorked<0){
+                    cout << "Value must be a positive integer: ";
+                    cin >> HoursWorked;
+                }
                 EMPLOYEE.EmpHoursWorked.push_back(HoursWorked);
                 
                 cout << "Input Hours Worked Overtime: ";
                 cin >> HoursOvertime;
+                while (HoursOvertime<0){
+                    cout << "Value must be a positive integer: ";
+                    cin >> HoursOvertime;
+                }
                 EMPLOYEE.EmpHoursOvertime.push_back(HoursOvertime);
                 
                 cout << "Input Normal Rate: ";
                 cin >> RateNormal;
+                while (RateNormal<0){
+                    cout << "Value must be a positive integer: ";
+                    cin >> RateNormal;
+                }
                 EMPLOYEE.EmpRateNormal.push_back(RateNormal);
                 
                 cout << "Input Overtime Rate: ";
                 cin >> RateOvertime;
+                while (RateOvertime<0){
+                    cout << "Value must be a positive integer: ";
+                    cin >> RateOvertime;
+                }
                 EMPLOYEE.EmpRateOvertime.push_back(RateOvertime);
                 
                 EMPLOYEE.updatedMessage();
@@ -230,6 +252,7 @@ int main()
                     cout << "Index must be between 0 and the number of employees: ";
                     cin >> i;
                 };
+                
                 while (userInput2 != (1 || 2)){
                     cout << "Are you sure you want to delete Index " << i;
                     cout << "\n1. Yes\n2. No" << endl;
@@ -237,8 +260,22 @@ int main()
                 };
                 if (userInput2 == 2){
                     break;
-                } else{
                     
+                } else{
+                    int x;
+                    x-=1;
+                    EMPLOYEE.EmpName.erase(EMPLOYEE.EmpName.begin()-1+x);
+                    EMPLOYEE.EmpAddress.erase(EMPLOYEE.EmpAddress.begin()-1+x);
+                    EMPLOYEE.EmpBirthDate.erase(EMPLOYEE.EmpBirthDate.begin()-1+x);
+                    EMPLOYEE.EmpPhoneNumber.erase(EMPLOYEE.EmpPosition.begin()-1+x);
+                    EMPLOYEE.EmpPosition.erase(EMPLOYEE.EmpPosition.begin()-1+x);
+                
+                    EMPLOYEE.EmpHoursWorked.erase(EMPLOYEE.EmpHoursWorked.begin()-1+x);
+                    EMPLOYEE.EmpHoursOvertime.erase(EMPLOYEE.EmpHoursOvertime.begin()-1+x);
+            
+                    EMPLOYEE.EmpRateNormal.erase(EMPLOYEE.EmpRateNormal.begin()-1+x);
+                    EMPLOYEE.EmpRateOvertime.erase(EMPLOYEE.EmpRateOvertime.begin()-1+x);
+                    EMPLOYEE.EmpSalary.erase(EMPLOYEE.EmpSalary.begin()-1+x);
                 }
                     
                 
