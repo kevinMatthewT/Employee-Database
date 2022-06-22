@@ -36,7 +36,7 @@ int main()
             case 1:
                 cout << "\n INDEX//ID//NAME//ADDRESS//BIRTH DATE//PHONE NUMBER//POSITION//HOURS WORKED//HOURS WORKED OVERTIME//NORMAL RATE//OVERTIME RATE\n";
                 for(int x = 0; x < EMPLOYEE.EmpID.size(); x++){
-                    cout<<x << ". // "EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
+                    cout<<x << ". // "<<EMPLOYEE.EmpID[x] << "//" <<EMPLOYEE.EmpName[x] <<"//"<<EMPLOYEE.EmpAddress[x]<< "//" <<EMPLOYEE.EmpBirthDate[x]<<"//"<< EMPLOYEE.EmpPhoneNumber[x]<< "//"<< EMPLOYEE.EmpPosition[x]<<"//"<< EMPLOYEE.EmpHoursWorked[x]<<"//"<< EMPLOYEE.EmpHoursOvertime[x]<<"//"<< EMPLOYEE.EmpRateNormal[x]<<"//"<< EMPLOYEE.EmpRateOvertime[x]<<endl;    
                 }           
                 break;
                 
@@ -245,39 +245,56 @@ int main()
                     break;
                 }
                 
-                i = -1;
+                int idtemp = -1;
                 userInput2 = 0;
                 cout << "Enter the employee index of the employee you want deleted: ";
-                cin >> i;
-                while(i<0 || i>EMPLOYEE.EmpID.size()){
-                    cout << "Index must be between 0 and the number of employees: ";
-                    cin >> i;
-                }
+                cin >> idtemp;
                 
-                while (userInput2 != (1 || 2)){
-                    cout << "Are you sure you want to delete Index " << i;
-                    cout << "\n1. Yes\n2. No" << endl;
-                    cout << "Choice: ";
-                    cin >> userInput2;
+                int checkID=0;
+                bool Checked=false;
+                int empIndex;
+                //making sure the id input is there
+                for(i=0;i<EMPLOYEE.EmpID.size();i++){
+                    checkID=EMPLOYEE.EmpID[i];
+                    if(idtemp==checkID){
+                        Checked=true;
+                        empIndex=i;
+                        break;
+                    }else{
+                        continue;
+                    }
                 }
-                switch (userInput2){
-                    case 1:
-                        EMPLOYEE.EmpID.erase(EMPLOYEE.EmpID.begin()+i);
-                        EMPLOYEE.EmpName.erase(EMPLOYEE.EmpName.begin()+i);
-                        EMPLOYEE.EmpAddress.erase(EMPLOYEE.EmpAddress.begin()+i);
-                        EMPLOYEE.EmpBirthDate.erase(EMPLOYEE.EmpBirthDate.begin()+i);
-                        EMPLOYEE.EmpPhoneNumber.erase(EMPLOYEE.EmpPhoneNumber.begin()+i);
-                        EMPLOYEE.EmpPosition.erase(EMPLOYEE.EmpPosition.begin()+i);
-                    
-                        EMPLOYEE.EmpHoursWorked.erase(EMPLOYEE.EmpHoursWorked.begin()+i);
-                        EMPLOYEE.EmpHoursOvertime.erase(EMPLOYEE.EmpHoursOvertime.begin()+i);
+
+                if (Checked==true){
                 
-                        EMPLOYEE.EmpRateNormal.erase(EMPLOYEE.EmpRateNormal.begin()+i);
-                        EMPLOYEE.EmpRateOvertime.erase(EMPLOYEE.EmpRateOvertime.begin()+i);
-                        break;
+                    while (userInput2 != (1 || 2)){
+                        cout << "Are you sure you want to delete Index " << i;
+                        cout << "\n1. Yes\n2. No" << endl;
+                        cout << "Choice: ";
+                        cin >> userInput2;
+                    }
+                    switch (userInput2){
+                        case 1:
+                            EMPLOYEE.EmpID.erase(EMPLOYEE.EmpID.begin()+empIndex);
+                            EMPLOYEE.EmpName.erase(EMPLOYEE.EmpName.begin()+empIndex);
+                            EMPLOYEE.EmpAddress.erase(EMPLOYEE.EmpAddress.begin()+empIndex);
+                            EMPLOYEE.EmpBirthDate.erase(EMPLOYEE.EmpBirthDate.begin()+empIndex);
+                            EMPLOYEE.EmpPhoneNumber.erase(EMPLOYEE.EmpPhoneNumber.begin()+empIndex);
+                            EMPLOYEE.EmpPosition.erase(EMPLOYEE.EmpPosition.begin()+empIndex);
+                        
+                            EMPLOYEE.EmpHoursWorked.erase(EMPLOYEE.EmpHoursWorked.begin()+empIndex);
+                            EMPLOYEE.EmpHoursOvertime.erase(EMPLOYEE.EmpHoursOvertime.begin()+empIndex);
                     
-                    case 2:
-                        break;
+                            EMPLOYEE.EmpRateNormal.erase(EMPLOYEE.EmpRateNormal.begin()+empIndex);
+                            EMPLOYEE.EmpRateOvertime.erase(EMPLOYEE.EmpRateOvertime.begin()+empIndex);
+                            break;
+                        
+                        case 2:
+                            break;
+                    }
+
+                } else if (Checked==false){
+                    cout << "employee does not exist"<<endl;
                 }
                
                 
